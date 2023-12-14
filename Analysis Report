@@ -1,0 +1,36 @@
+# Credit Risk Analysis Report
+
+## Overview  
+- The objective was to train and evaluate a machine learning model to assess loan risk. The goal was to build a strong machine-learning model that can determine the credit-worthiness of borrowers.
+- The data set consisted of the following features:
+    - `loan_size`
+    - `interest_rate`
+    - `borrower_income`
+    - `debt_to_income`
+    - `num_of_accounts`
+    - `derogatory_marks`
+    - `total_debt`
+    - `loan_status`
+- Our target column was `loan_status`, which we were trying to predict accurately
+- `LogisticRegression` was our model for machine learning
+
+## Results
+
+- Machine Learning Model 1:
+    - Separated the dataset into dependent/independent variables, and split into train/test data after fitting the train data to our model 
+    - Once fitted, predictions were made using one of the test data
+    - Then, evaluated the model using predictions and the remaining test data 
+    - Accuracy: The predicted accuracy was is 95%
+    - Precision: The precision for `Healthy Loan` or `0` is 100% and for `High-risk Loan` or `1` is 85%
+    - Recall: The recall for `Healthy Loan` or `0` is 99% and for `High-risk Loan` or `1` is 91%
+
+- Machine Learning Model 2:
+    - Using `RandomOverSampler`, we randomly duplicated examples in the minority class,
+    - Trained and fit the data into the `LogisticRegression` model, then evaluated
+    - Accuracy: The predicted accuracy is 99%
+    - Precision: The precision for `Healthy Loan` or `0` is 100% and for `High-risk Loan` or `1` is 84%
+    - Recall: The recall for `Healthy Loan` or `0` is 99% and for `High-risk Loan` or `1` is 99%
+
+### Summary
+- The recall of the oversampled data for high-risk-loan is better than the original data, outside of the precision, 
+- which went down 0.01. The healthy loan remains exactly the same across the board.
